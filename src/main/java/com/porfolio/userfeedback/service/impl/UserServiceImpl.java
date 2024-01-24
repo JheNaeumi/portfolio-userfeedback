@@ -8,6 +8,8 @@ import com.porfolio.userfeedback.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @AllArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
@@ -19,4 +21,13 @@ public class UserServiceImpl implements UserService {
 
         return UserMapper.mapToUserDto(saveuser);
     }
+
+    @Override
+    public List<UserDto> getAllRatings() {
+
+        List<User> users = userRepository.findallRatings();
+        return null;
+    }
+
+
 }
