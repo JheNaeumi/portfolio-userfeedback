@@ -1,7 +1,7 @@
 package com.porfolio.userfeedback.service;
 
 import com.porfolio.userfeedback.dto.UserDto;
-import com.porfolio.userfeedback.util.Rating;
+import com.porfolio.userfeedback.dto.UserDtoAvgRating;
 
 import java.util.List;
 
@@ -9,6 +9,8 @@ public interface UserService {
 
     UserDto addUserFeedback(UserDto userDto);
 
-    List<UserDto> getAllRatings();
+    List<UserDtoAvgRating> getAllRatings();
+
+    Long getAverageRatings();
 
 }
