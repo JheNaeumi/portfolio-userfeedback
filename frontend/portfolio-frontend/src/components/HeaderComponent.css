@@ -1,0 +1,41 @@
+/* HeaderComponent.css */
+
+.modern-header {
+    background-color: #2c3e50; /* Header background color */
+    color: #ecf0f1; /* Text color */
+    padding: 15px 0; /* Adjust top and bottom padding */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 140px; /* Adjust logo width */
+    height: auto;
+  }
+  
+  .nav-links ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-right: 20px; /* Adjust spacing between navigation links */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #ecf0f1; /* Link color */
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #3498db; /* Hover color */
+  }
+  
