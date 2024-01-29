@@ -8,22 +8,25 @@ import jhenauemi from '../assets/jhe-naeumi-high-resolution-logo-white-transpare
 const HeaderComponent = () => {
   return (
     <header className="modern-header">
-      <div className="container">
+    <div className="container">
         <div className="logo">
-          <Link to="/">
-            <img src={jhenauemi} alt="Logo" />
-          </Link>
+            <Link to="/">
+                <img src={jhenauemi} alt="Logo" />
+            </Link>
         </div>
+        <input type="checkbox" id="menu-toggle" className="menu-toggle" />
+        <label htmlFor="menu-toggle" className="menu-icon">&#9776;</label>
         <nav className="nav-links">
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            {/* Add more navigation links as needed */}
-          </ul>
+            <ul className="nav-list">
+                <li className="nav-item"><Link to="/">Home</Link></li>
+                <li className="nav-item"><Link to="/about">About</Link></li>
+                <li className="nav-item"><Link to="/contact">Contact</Link></li>
+                {/* Add more navigation links as needed */}
+            </ul>
         </nav>
-      </div>
-    </header>
+    </div>
+</header>
+
   );
 };
 
