@@ -1,6 +1,6 @@
 import './App.css'
 import FooterComponent from './components/FooterComponent'
-import DefaultComponent from './components/DefaultComponent'
+import DefaultComponent from './components/DefaultComponents'
 import HeaderComponent from './components/HeaderComponent'
 import UserFeedbackComponent from './components/UserfeedbackComponent'
 import MainPage from './components/MainPageComponent'
