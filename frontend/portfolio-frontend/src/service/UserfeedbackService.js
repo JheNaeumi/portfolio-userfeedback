@@ -6,6 +6,8 @@ export const listAllRatings = () => {
     return axios.get(REST_API_BASE_URL + "/all");
 
 }
+export const postUserFeedback = (userFeedback) => axios.post(REST_API_BASE_URL, userFeedback);
+
 export const getAvrgRatings =() => {
     return axios.get(REST_API_BASE_URL + "/all/cal");
 
