@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import './UserFeedbackComponent.css';
 
 const UserFeedbackComponent = () => {
-  const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+  const [showFeedbackForm, setShowFeedbackForm] = useState(true);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [feedback, setFeedback] = useState('');
@@ -47,7 +47,7 @@ const UserFeedbackComponent = () => {
   };
 
   return (
-    <div className={`user-feedback ${showFeedbackForm ? 'active': ''}`}>
+    <div className={`user-feedback ${showFeedbackForm ? 'active': ''}`} id = "feedback">
       <button onClick={toggleFeedbackForm}>Give Feedback</button>
       {showFeedbackForm && (
         <div className="feedback-form">
@@ -84,7 +84,7 @@ const UserFeedbackComponent = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default UserFeedbackComponent;
+export default UserFeedbackComponent
