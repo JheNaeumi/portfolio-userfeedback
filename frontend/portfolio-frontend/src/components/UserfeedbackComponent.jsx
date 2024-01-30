@@ -2,26 +2,35 @@
 
 import React, { useState } from 'react';
 import './UserFeedbackComponent.css';
+import { postUserFeedback, getAvrgRatings} from '../service/UserfeedbackService';
+import {useNavigate} from 'react-router-dom'
 
 const UserFeedbackComponent = () => {
   const [showFeedbackForm, setShowFeedbackForm] = useState(true);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [feedback, setFeedback] = useState('');
+  const [comments, setFeedback] = useState('');
   const [rating, setRating] = useState(0);
 
+  const navigator = useNavigate();  
   const toggleFeedbackForm = () => {
     setShowFeedbackForm(!showFeedbackForm);
   };
 
   const submitFeedback = () => {
     // Handle feedback submission (you can send it to a server, etc.)
-    console.log('Feedback submitted:', { name, email, feedback, rating });
+    const user = {name, email, comments ,rating}
+    postUserFeedback(user).then((response)=>{
+      console.log(response.data);
+      navigator('/users')
+    }).catch(console.error())
+    console.log('Feedback submitted:', { name, email, comments, rating });
     setShowFeedbackForm(false);
     setName('');
     setEmail('');
     setFeedback('');
     setRating(0);
+ 
   };
 
   // Function to handle star rating
@@ -75,7 +84,7 @@ const UserFeedbackComponent = () => {
           <label htmlFor="feedback">Feedback:</label>
           <textarea
             id="feedback"
-            value={feedback}
+            value={comments}
             onChange={(e) => setFeedback(e.target.value)}
             placeholder="Type your feedback here"
           ></textarea>
