@@ -24,7 +24,7 @@ const HeaderComponent = () => {
                     <Link to="home" spy={true} smooth={true} offset={0} duration={200}>Home</Link>
                  </li>
                 <li className="nav-item">
-                    <Link to="default" spy={true} smooth={true} offset={-10} duration={200}>Default</Link>
+                    <Link to="project" spy={true} smooth={true} offset={-10} duration={200}>Project</Link>
                 </li>
                 <li className="nav-item">
                     <Link to="feedback" spy={true} smooth={true} offset={-10} duration={200}>Feedback</Link>

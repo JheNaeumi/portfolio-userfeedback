@@ -27,17 +27,17 @@
 
 .nav-links li {
   margin-right: 20px; /* Adjust spacing between navigation links */
-}
-
-.nav-links a {
   text-decoration: none;
   color: #ecf0f1; /* Link color */
   font-weight: bold;
   transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: #3498db; /* Hover color */
+
+.nav-links li:hover {
+  /* Hover color */
+  cursor: pointer;
+  color: #3498db;
 }
 /* Hide the checkbox */
 .menu-toggle {
@@ -56,13 +56,14 @@
   .container {
       flex-direction: column;
       height: auto;
- 
+     
   }
 
   .nav-links {
       display: none;
       width: 100%;
       justify-content: center;
+      
   }
 
   .menu-icon {
@@ -81,6 +82,7 @@
   }
   .nav-links li {
     margin-right: 0%;
+   
   }
   .nav-item {
       margin: 10px 0; /* Adjust spacing between dropdown items */
@@ -95,5 +97,7 @@
   #menu-toggle:checked ~ .nav-links {
       display: flex;
   }
+  
+ 
 }
 

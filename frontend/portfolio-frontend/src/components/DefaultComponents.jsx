@@ -3,6 +3,7 @@ import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useState } from "react"
 
+
 const DefaultComponents = () => {
     const [count, setCount] = useState(0)
     return (
@@ -28,6 +29,7 @@ const DefaultComponents = () => {
         Click on the Vite and React logos to learn more
       </p>
     </div>
+   
      
     )
 }
