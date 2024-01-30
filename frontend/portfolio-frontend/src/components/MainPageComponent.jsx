@@ -6,9 +6,9 @@ import jprofile from '../assets/jprofile.png'
 
 const MainPage = () => {
   const [titles, setTitles] = useState([
-    'I am a Web Developer',
-    'I am a Mobile Developer',
-    'I am an App Designer',
+    'Web Development',
+    'Mobile Development',
+    'and Game Development',
     // Add more titles as needed
   ]);
 
@@ -24,7 +24,7 @@ const MainPage = () => {
   }, [titles]);
 
   return (
-    <div className="main-page">
+    <div className="main-page" id="home">
       <img
         className="center-image"
         src={jprofile}
@@ -35,7 +35,7 @@ const MainPage = () => {
         <h1>{titles[currentTitleIndex]}</h1>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MainPage;
+export default MainPage
