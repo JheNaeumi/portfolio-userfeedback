@@ -1,7 +1,7 @@
 import './App.css'
 import FooterComponent from './components/FooterComponent'
 import HeaderComponent from './components/HeaderComponent'
-import DefaultComponent from './components/DefaultComponents'
+import StatsComponent from './components/StatsComponent'
 import UserFeedbackComponent from './components/UserfeedbackComponent'
 import MainPageComponent from './components/MainPageComponent'
 import ProjectComponent from './components/ProjectComponent'
@@ -14,6 +14,7 @@ function App() {
       <HeaderComponent/>
       <MainPageComponent/>
       <ProjectComponent/>
+      <StatsComponent/>
       <UserFeedbackComponent/>
       <FooterComponent/>
     </BrowserRouter>
