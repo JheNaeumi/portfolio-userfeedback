@@ -56,10 +56,11 @@ const UserFeedbackComponent = () => {
   };
 
   return (
+  <div id="container-feedback">
     <div className={`user-feedback ${showFeedbackForm ? 'active': ''}`} id = "feedback">
-      <button onClick={toggleFeedbackForm}>Give Feedback</button>
+      <button onClick={toggleFeedbackForm}className="button1">Give Feedback</button>
       {showFeedbackForm && (
-        <div className="feedback-form">
+        <div className="feedback-form" id ="space">
           <label htmlFor="name">Name:</label>
           <input
             type="text"
@@ -89,10 +90,11 @@ const UserFeedbackComponent = () => {
             placeholder="Type your feedback here"
           ></textarea>
 
-          <button onClick={submitFeedback}>Submit Feedback</button>
+          <button onClick={submitFeedback}className='button1'>Submit Feedback</button>
         </div>
       )}
     </div>
+  </div>
   )
 }
 
