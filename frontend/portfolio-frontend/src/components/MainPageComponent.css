@@ -1,42 +1,84 @@
-/* MainPage.css */
-
 .main-page {
+  display: flex;
+  flex-direction: row;
+  height:600px;
+}
+
+.img {
+  margin-top: 130px;
+  padding: 20px;
+  width: 50%;
+}
+
+.center-image {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.title-animation{
+
+  text-align: center;
+  margin-top: 20px;
+}
+
+.title-animation h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: auto;
+  padding: 10px;
+  display: inline;
+  border-bottom: 2px solid #3498db;
+  animation: fadeInOut 4s linear infinite alternate;
+}
+
+.about-me {
+  margin-top: 120px;
+  padding: 20px;
+  margin-bottom: 30px;
+  justify-content: center;
+  width: 50%;
+}
+.about-me h1{
+  text-align: center;
+  
+}
+
+
+
+@keyframes fadeInOut {
+  0%, 100% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-page {
+      flex-direction:column;
+      height: auto;
+      align-items: center;
+  
+      
+   
+  }
+  .title-animation{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
+    padding: 0;
+  }
+  .img{
+    width: 80%;
+  }
+  .about-me{
+    margin-top: 40px;
+    padding: 0%;
+    width: 80%;
 
   }
+
   
-  .center-image {
-    width: 200px; /* Adjust the width of your image as needed */
-    height: 200px; /* Adjust the height of your image as needed */
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
+
   
-  .title-animation {
-    text-align: center;
-  }
-  
-  .title-animation h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    padding: 10px;
-    border-bottom: 2px solid #3498db; /* Add a bottom border for emphasis */
-    display: inline-block;
-    animation: fadeInOut 4s linear infinite alternate; /* Customize the animation duration as needed */
-  }
-  
-  @keyframes fadeInOut {
-    0%, 100% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-  
+}
