@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import './UserFeedbackComponent.css';
-import { postUserFeedback, getAvrgRatings} from '../service/UserfeedbackService';
+import { postUserFeedback} from '../service/UserfeedbackService';
 import {useNavigate} from 'react-router-dom'
 
 const UserFeedbackComponent = () => {
@@ -20,6 +20,7 @@ const UserFeedbackComponent = () => {
   const submitFeedback = () => {
     // Handle feedback submission (you can send it to a server, etc.)
     const user = {name, email, comments ,rating}
+    
     postUserFeedback(user).then((response)=>{
       console.log(response.data);
       navigator('/users')
