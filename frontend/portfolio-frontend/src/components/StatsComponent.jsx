@@ -1,6 +1,20 @@
 
+import React, { useState, useEffect } from 'react';
+import { getAvrgRatings} from '../service/UserfeedbackService';
+
 
 const StatsComponent = () => {
+    const [averageRatings, setAverageRatings] = useState(null);
+    useEffect(()=>
+    {
+        getAverageRatings();
+    },[])
+    function getAverageRatings (){
+        getAvrgRatings().then((respone)=> {
+            setAverageRatings(respone.data.averageRatings);
+        }).catch(console.error());
+    }
+
     return(
     <div className="bg-white py-16 pt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +50,7 @@ const StatsComponent = () => {
                                 <dt className="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
                                     Review
                                 </dt>
-                                <dd className="order-1 text-5xl font-extrabold text-gray-700">30+</dd>
+                                <dd className="order-1 text-5xl font-extrabold text-gray-700">{averageRatings}★</dd>
                             </div>
                         </dl>
                     </div>
