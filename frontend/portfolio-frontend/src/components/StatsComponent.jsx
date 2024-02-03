@@ -10,9 +10,9 @@ const StatsComponent = () => {
         getAverageRatings();
     },[])
     function getAverageRatings (){
-        getAvrgRatings().then((respone)=> {
-            setAverageRatings(respone.data.averageRatings);
-        }).catch(console.error());
+        getAvrgRatings().then((response)=> {
+            setAverageRatings(response.data.averageRatings);
+            }).catch(console.error());
     }
 
     return(
