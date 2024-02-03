@@ -1,7 +1,7 @@
 /* HeaderComponent.css */
 
 .modern-header {
-  background-color: #0F1035; /* Header background color */
+  background-color: #191717; /* Header background color */
   color: #ecf0f1; /* Text color */
   padding: 10px 0; /* Adjust top and bottom padding */
 }
@@ -14,7 +14,7 @@
 }
 
 .logo img {
-  width: 140px; /* Adjust logo width */
+  width: 120px; /* Adjust logo width */
   height: auto;
 }
 

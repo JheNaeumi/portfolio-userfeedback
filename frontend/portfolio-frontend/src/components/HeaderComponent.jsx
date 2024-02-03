@@ -1,12 +1,11 @@
 // HeaderComponent.jsx
-
 import React from 'react';
 import { Link } from 'react-scroll';
 import './HeaderComponent.css'; // Import your header component styles
 import jhenauemi from '../assets/jhe-naeumi-high-resolution-logo-white-transparent.png'
 
 
-const HeaderComponent = () => {
+const HeaderComponent= () => {
   return (
    
     <header className="modern-header">

@@ -32,7 +32,7 @@ const posts = [
   ]
   const ProjectComponent = () => {
     return ( 
-        <div className="bg-[#DCF2F1] py-24 sm:py-32" id="project">
+        <div className="bg-[#F1EFEF] py-24 sm:py-32" id="project">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Projects</h2>
@@ -44,7 +44,7 @@ const posts = [
               {posts.map((post) => (
                 <article key={post.id} className="flex max-w-2xl flex-col items-center justify-between border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                   <div className="group relative">
-                    <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                    <h3 className="mt-3 ml-3 mr-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                       <a href={post.href}>
                         <span className="absolute inset-0" />
                         {post.title}
@@ -52,7 +52,7 @@ const posts = [
                     </h3>
                     <p className="flex mt-5 ml-5 mr-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.description}</p>
                   </div>
-                  <div className="relative mt-8 flex items-center gap-x-4">
+                  <div className="flex mt-8 ml-5 mr-5 items-center gap-x-4">
                     <div className="text-sm leading-6">
                       <p className="font-semibold text-gray-900">
                         <a href={post.technology.href}>
