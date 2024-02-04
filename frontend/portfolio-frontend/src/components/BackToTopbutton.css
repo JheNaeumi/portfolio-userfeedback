@@ -1,0 +1,30 @@
+/* styles.css */
+.back-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0;
+    width: 70px;
+    height: 80px;
+   
+  }
+  
+  .back-to-top.visible {
+    animation: fadeIn 2s;
+    opacity: 1;
+  }
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+ 

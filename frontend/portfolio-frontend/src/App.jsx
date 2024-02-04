@@ -5,6 +5,7 @@ import StatsComponent from './components/StatsComponent'
 import UserFeedbackComponent from './components/UserfeedbackComponent'
 import MainPageComponent from './components/MainPageComponent'
 import ProjectComponent from './components/ProjectComponent'
+import BackToTopButton from './components/BackTotopbutton'
 import{BrowserRouter, Route, Routes} from 'react-router-dom'
 function App() {
  
@@ -12,11 +13,20 @@ function App() {
     <>
     <BrowserRouter>
       <HeaderComponent/>
-      <MainPageComponent/>
-      <ProjectComponent/>
-      <StatsComponent/>
-      <UserFeedbackComponent/>
+      <Routes>
+      <Route path="/"element={
+        <>
+          <MainPageComponent />
+          <ProjectComponent/>
+          <StatsComponent />
+          <UserFeedbackComponent />
+          <BackToTopButton/>
+        </>}>
+      </Route>
+      </Routes>
+      
       <FooterComponent/>
+      
     </BrowserRouter>
     </>
   )
