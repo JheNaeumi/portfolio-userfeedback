@@ -3,10 +3,11 @@ import './FooterComponent.css'
 import github from '../assets/github.png'
 import linkedin from '../assets/linkedin.png'
 import facebook from '../assets/facebook-logo.png'
+
+
 const FooterComponent = () => {
   return (
-    <div>
-    <footer className="footer">
+    <footer id="footer">
       
       <div className="social-links">
         <a href="https://github.com/JheNaeumi" target="_blank" rel="noopener noreferrer">
@@ -17,12 +18,12 @@ const FooterComponent = () => {
         </a>
         <a href="https://www.facebook.com/JheNaeumi" target="_blank" rel="noopener noreferrer">
           <img src={facebook} alt="Facebook" />
-        </a>
-        
+        </a>   
       </div>
-      <span>All rights reserved 2023</span>
+      <span>
+         All rights reserved
+        </span>
     </footer>
-  </div>
   )
 }
 
