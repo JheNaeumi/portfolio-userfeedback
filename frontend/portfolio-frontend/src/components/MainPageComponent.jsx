@@ -6,9 +6,9 @@ import jprofile from '../assets/jprofile.png'
 
 const MainPage = () => {
   const [titles, setTitles] = useState([
-    'Web Development',
-    'Mobile Development',
-    'and Game Development',
+    "Hi, I’m Jeremiah Pasion",
+    'A Passionate Developer',
+    'And Tech Enthusiast ',
     // Add more titles as needed
   ]);
 
@@ -18,7 +18,7 @@ const MainPage = () => {
     const interval = setInterval(() => {
       // Rotate through titles
       setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
-    }, 4000); // Change title every 2 seconds
+    }, 3000); // Change title every 2 seconds
 
     return () => clearInterval(interval);
   }, [titles]);
@@ -41,7 +41,17 @@ const MainPage = () => {
      
       <div className='about-me'>
         <h1 >About me</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+        <p> 
+            Welcome to my digital space, where I’m excited to share a bit about who I am.
+            I'm on a journey of self-discovery and growth as a Software Developer/Engineer.
+            As I navigate the exciting landscape of new technologies,
+            I find myself embracing the opportunity to learn, create, and evolve. 
+            With a background in Computer Science, graduating from University of Cordillera. 
+            I have been learning programming since senior high. During that time i was super interested and motivated as i learn 
+            to create/build apps, but at the same time it was difficult at that time nevertheless i continued on and found it super fun and challenging.
+            When I'm not immersed in the digital world, you'll find me doing interesting stuff. 
+            These activities provide balance and inspiration, influencing the creative energy I pour into my projects.
+       </p>
       </div>
     </div>
     </section>
