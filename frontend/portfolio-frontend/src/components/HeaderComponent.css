@@ -1,7 +1,7 @@
 /* HeaderComponent.css */
 
 .modern-header {
-  background-color: #191717; /* Header background color */
+  background-color: #A6B1E1; /* Header background color */
   color: #ecf0f1; /* Text color */
   padding: 10px 0; /* Adjust top and bottom padding */
 }
@@ -32,7 +32,7 @@
 .nav-linkscustom li {
   margin-right: 20px; /* Adjust spacing between navigation links */
   text-decoration: none;
-  color: #ecf0f1; /* Link color */
+  color: #424874; /* Link color */
   font-weight: bold;
 
 }
@@ -40,7 +40,7 @@
 .nav-linkscustom li:hover {
   /* Hover color */
   cursor: pointer;
-  color: #3498db;
+  color: #F4EEFF;
 }
 /* Hide the checkbox */
 .menu-toggle {

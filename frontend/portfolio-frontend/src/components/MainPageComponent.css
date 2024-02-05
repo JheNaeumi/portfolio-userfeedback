@@ -2,20 +2,21 @@
   display: flex;
   flex-direction: row;
   height:600px;
-  background-color: #F1EFEF;
+  background-color: #A6B1E1;
 
 }
 
 .imgprofile {
-  margin-top: 130px;
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
+
 }
 
 .center-imag1e {
+  margin-top: 130px;
   height: 200px;
   width: 200px;
   object-fit: cover;
@@ -34,16 +35,25 @@
   padding: 10px;
   display: inline;
   border-bottom: 2px solid #3498db;
-  animation: fadeInOut 4s linear infinite alternate;
+  animation: fadeInOut 3s linear infinite alternate;
 }
 
 .about-me {
   margin-top: 120px;
   padding: 20px;
-  margin-bottom: 30px;
   justify-content: center;
   width: 50%;
   text-align: center;
+  font-weight:bolder;
+
+  
+ 
+}
+.about-me p{
+  text-indent: 20px;
+  text-align:left;
+  font-weight:lighter;
+  
 }
 
 

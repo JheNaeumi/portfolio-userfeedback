@@ -5,9 +5,9 @@
     bottom: 0;
     width: 100%;
     height: 100px; /* Increased height to accommodate social icons */
-    background-color: #191717;
+    background-color: white;
     text-align: center;
-    color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
