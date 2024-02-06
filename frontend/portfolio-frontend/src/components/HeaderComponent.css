@@ -4,6 +4,7 @@
   background-color: #A6B1E1; /* Header background color */
   color: #ecf0f1; /* Text color */
   padding: 10px 0; /* Adjust top and bottom padding */
+  border-radius: 5px;
 }
 
 .container {

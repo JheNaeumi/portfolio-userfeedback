@@ -36,15 +36,15 @@ import React from 'react'
     ]
     return ( 
       <section id = "project">
-        <div className="bg-gradient-to-b from-[#A6B1E1] to-[#DCD6F7] py-24 sm:py-32">
+        <div className="bg-gradient-to-b from-[#A6B1E1] to-[#DCD6F7] py-24 sm:py-32 rounded-t-lg">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-            <div className="mx-auto max-w-2xl lg:mx-0">
+            <div className=" rounded-lg mx-auto max-w-2xl lg:mx-0">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Projects</h2>
               <p className="mt-2 text-lg leading-8 text-gray-600">
                  Discover highlights from my projects
               </p>
             </div>
-            <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
               {posts.map((post) => (
                 <article key={post.id} className="bg-[#F1EAFF] hover:bg-[#DCF2F1] flex max-w-2xl flex-col items-center justify-between border border-gray-900 rounded-lg shadow dark:bg-gray-900 dark:border-gray-900">
                   <div className="group relative">

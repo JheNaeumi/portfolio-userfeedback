@@ -42,15 +42,10 @@ const MainPage = () => {
       <div className='about-me'>
         <h1 >About me</h1>
         <p> 
-            Welcome to my digital space, where I’m excited to share a bit about who I am.
-            I'm on a journey of self-discovery and growth as a Software Developer/Engineer.
-            As I navigate the exciting landscape of new technologies,
-            I find myself embracing the opportunity to learn, create, and evolve. 
-            With a background in Computer Science, graduating from University of Cordillera. 
-            I have been learning programming since senior high. During that time i was super interested and motivated as i learn 
-            to create/build apps, but at the same time it was difficult at that time nevertheless i continued on and found it super fun and challenging.
-            When I'm not immersed in the digital world, you'll find me doing interesting stuff. 
-            These activities provide balance and inspiration, influencing the creative energy I pour into my projects.
+        Welcome to my digital space! I'm a Software Developer/Engineer on a journey of self-discovery and growth.
+         Graduating from the University of Cordillera with a background in Computer Science, I've been learning programming since senior high. 
+         Despite initial challenges, I found the process both fun and challenging.
+          Beyond the digital realm, engaging in various activities provides balance and inspiration, influencing the creative energy I invest in my projects.
        </p>
       </div>
     </div>

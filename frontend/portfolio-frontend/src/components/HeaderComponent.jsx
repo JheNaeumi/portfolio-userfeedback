@@ -21,13 +21,10 @@ const HeaderComponent= () => {
                     <Link to="home" spy={true} smooth={true} offset={-10} duration={200}>Home</Link>
                 </li>
                 <li className="nav-itemcustom">
-                    <Link to="project" spy={true} smooth={true} offset={-10} duration={200}>Project</Link>
+                    <Link to="project" spy={true} smooth={true} offset={0} duration={200}>Project</Link>
                 </li>
                 <li className="nav-itemcustom">
-                    <Link to="feedback" spy={true} smooth={true} offset={-10} duration={200}>Feedback</Link>
-                 </li>
-                 <li className="nav-itemcustom">
-                    <Link to="stat" spy={true} smooth={true} offset={-10} duration={200}>Stats</Link>
+                    <Link to="feedback" spy={true} smooth={true} offset={0} duration={200}>Feedback</Link>
                  </li>
                 {/* Add more navigation links as needed */}
             </ul>
