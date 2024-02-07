@@ -1,7 +1,7 @@
 package com.porfolio.userfeedback.mapper;
 
 import com.porfolio.userfeedback.dto.UserDto;
-import com.porfolio.userfeedback.dto.UserDtoAvgRating;
+import com.porfolio.userfeedback.dto.UserDtoRating;
 import com.porfolio.userfeedback.entity.User;
 
 public class UserMapper {
@@ -24,8 +24,8 @@ public class UserMapper {
                 userDto.getRating()
         );
     }
-    public static UserDtoAvgRating mapToUserDtoAvgRating(User user) {
-        UserDtoAvgRating userDto = new UserDtoAvgRating();
+    public static UserDtoRating mapToUserDtoRating(User user) {
+        UserDtoRating userDto = new UserDtoRating();
         userDto.setRating(user.getRating());
         userDto.setId(user.getId());
         // You may set other fields if needed, or just return the UserDto with the rating

@@ -1,7 +1,7 @@
 package com.porfolio.userfeedback.controller;
 
 import com.porfolio.userfeedback.dto.UserDto;
-import com.porfolio.userfeedback.dto.UserDtoAvgRating;
+import com.porfolio.userfeedback.dto.UserDtoRating;
 import com.porfolio.userfeedback.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,10 +25,10 @@ public class UserController {
     }
 
     @GetMapping(path = "/rating")
-    public ResponseEntity<List<UserDtoAvgRating>>getAllRatings(){
-        List<UserDtoAvgRating> userDtoAvgRating =userService.getAllRatings();
+    public ResponseEntity<List<UserDtoRating>>getAllRatings(){
+        List<UserDtoRating> userDtoRating =userService.getAllRatings();
 
-        return ResponseEntity.ok( userDtoAvgRating);
+        return ResponseEntity.ok(userDtoRating);
     }
     @GetMapping(path = "/rating/avg")
     public ResponseEntity<Map<String, Long>> calculateRatings() {
