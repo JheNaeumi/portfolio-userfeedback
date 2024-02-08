@@ -24,7 +24,6 @@ public class UserServiceImpl implements UserService {
     public UserDto addUserFeedback(UserDto userDto) {
         User user = UserMapper.mapToUser(userDto);
         User saveuser = userRepository.save(user);
-
         return UserMapper.mapToUserDto(saveuser);
     }
     // get All Ratings from Users
@@ -37,11 +36,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public Long getAverageRatings() {
         List<Long> ratings = userRepository.findAllIntRatings();
-        if(ratings==null||ratings.isEmpty()){
-            return 0L;
-        }
         Rating rating = new Rating();
         return rating.calculateAverageRating(ratings);
+    }
+    //get Count of Ratings
+    @Override
+    public Long getCountRatings() {
+        List<Long> ratings = userRepository.findAllIntRatings();
+        Rating rating = new Rating();
+        return rating.getCountRating(ratings);
     }
 
 

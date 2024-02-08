@@ -1,6 +1,7 @@
 package com.porfolio.userfeedback.controller;
 
 import com.porfolio.userfeedback.dto.UserDto;
+import com.porfolio.userfeedback.dto.UserDtoFeedback;
 import com.porfolio.userfeedback.dto.UserDtoRating;
 import com.porfolio.userfeedback.service.UserService;
 import lombok.AllArgsConstructor;
@@ -27,16 +28,20 @@ public class UserController {
     @GetMapping(path = "/rating")
     public ResponseEntity<List<UserDtoRating>>getAllRatings(){
         List<UserDtoRating> userDtoRating =userService.getAllRatings();
-
         return ResponseEntity.ok(userDtoRating);
     }
     @GetMapping(path = "/rating/avg")
-    public ResponseEntity<Map<String, Long>> calculateRatings() {
+    public ResponseEntity<UserDtoFeedback> calculateRatings() {
         long overallRatings = userService.getAverageRatings();
-
-        Map<String, Long> response = new HashMap<>();
-        response.put("averageRatings", overallRatings);
-
+        UserDtoFeedback response = new UserDtoFeedback();
+        response.setAvgRating(overallRatings);
+        return ResponseEntity.ok(response);
+    }
+    @GetMapping(path = "/rating/count")
+    public ResponseEntity<UserDtoFeedback> countRatings() {
+        long countRating = userService.getCountRatings();
+        UserDtoFeedback response = new UserDtoFeedback();
+        response.setCount(countRating);
         return ResponseEntity.ok(response);
     }
 }
