@@ -1,8 +1,12 @@
 package com.porfolio.userfeedback.mapper;
 
 import com.porfolio.userfeedback.dto.UserDto;
+import com.porfolio.userfeedback.dto.UserDtoFeedback;
 import com.porfolio.userfeedback.dto.UserDtoRating;
 import com.porfolio.userfeedback.entity.User;
+import com.porfolio.userfeedback.util.Rating;
+
+import java.util.List;
 
 public class UserMapper {
     public static UserDto mapToUserDto(User user){
@@ -28,8 +32,13 @@ public class UserMapper {
         UserDtoRating userDto = new UserDtoRating();
         userDto.setRating(user.getRating());
         userDto.setId(user.getId());
-        // You may set other fields if needed, or just return the UserDto with the rating
         return userDto;
+    }
+    public static UserDtoFeedback mapToUserDtoFeedback(Long count, Long avg){
+        UserDtoFeedback userDtoFeedback = new UserDtoFeedback();
+        userDtoFeedback.setCount(count);
+        userDtoFeedback.setAvgRating(avg);
+        return  userDtoFeedback;
     }
 
 
