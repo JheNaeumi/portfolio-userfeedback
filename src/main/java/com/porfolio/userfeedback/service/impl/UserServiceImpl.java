@@ -1,6 +1,7 @@
 package com.porfolio.userfeedback.service.impl;
 
 import com.porfolio.userfeedback.dto.UserDto;
+import com.porfolio.userfeedback.dto.UserDtoFeedback;
 import com.porfolio.userfeedback.dto.UserDtoRating;
 import com.porfolio.userfeedback.entity.User;
 import com.porfolio.userfeedback.mapper.UserMapper;
@@ -32,20 +33,14 @@ public class UserServiceImpl implements UserService {
        List<User> users = userRepository.findAllRatings();
        return users.stream().map((user) -> UserMapper.mapToUserDtoRating(user) ).collect(Collectors.toList());
     }
-    // get Average Ratings
+    // get Average + Count Ratings
     @Override
-    public Long getAverageRatings() {
+    public UserDtoFeedback getAverageAndCountRatings() {
         List<Long> ratings = userRepository.findAllIntRatings();
         Rating rating = new Rating();
-        return rating.calculateAverageRating(ratings);
+        long avg = rating.calculateAverageRating(ratings);
+        long count = rating.getCountRating(ratings);
+        return UserMapper.mapToUserDtoFeedback(count, avg);
     }
-    //get Count of Ratings
-    @Override
-    public Long getCountRatings() {
-        List<Long> ratings = userRepository.findAllIntRatings();
-        Rating rating = new Rating();
-        return rating.getCountRating(ratings);
-    }
-
 
 }
