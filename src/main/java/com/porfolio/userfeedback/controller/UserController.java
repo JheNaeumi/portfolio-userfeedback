@@ -30,18 +30,10 @@ public class UserController {
         List<UserDtoRating> userDtoRating =userService.getAllRatings();
         return ResponseEntity.ok(userDtoRating);
     }
-    @GetMapping(path = "/rating/avg")
+    @GetMapping(path = "/rating/avg+count")
     public ResponseEntity<UserDtoFeedback> calculateRatings() {
-        long overallRatings = userService.getAverageRatings();
-        UserDtoFeedback response = new UserDtoFeedback();
-        response.setAvgRating(overallRatings);
-        return ResponseEntity.ok(response);
+        UserDtoFeedback userDtoFeedback = userService.getAverageAndCountRatings();
+        return ResponseEntity.ok(userDtoFeedback);
     }
-    @GetMapping(path = "/rating/count")
-    public ResponseEntity<UserDtoFeedback> countRatings() {
-        long countRating = userService.getCountRatings();
-        UserDtoFeedback response = new UserDtoFeedback();
-        response.setCount(countRating);
-        return ResponseEntity.ok(response);
-    }
+
 }
