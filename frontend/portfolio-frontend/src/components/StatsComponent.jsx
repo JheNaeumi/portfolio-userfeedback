@@ -1,17 +1,19 @@
 
 import React, { useState, useEffect } from 'react';
-import { getAvrgRatings} from '../service/UserfeedbackService';
+import { getAvrgCountRatings} from '../service/UserfeedbackService';
 
 
 const StatsComponent = () => {
-    const [averageRatings, setAverageRatings] = useState(null);
+    const [averageRatings, setAverageRatings] = useState([]);
+
+
     useEffect(()=>
     {
-        getAverageRatings();
+        getAverageAndCountRatings();
     },[])
-    function getAverageRatings (){
-        getAvrgRatings().then((response)=> {
-            setAverageRatings(response.data.averageRatings);
+    function getAverageAndCountRatings (){
+        getAvrgCountRatings().then((response)=> {
+              setAverageRatings(response.data)
             }).catch(console.error());
     }
 
@@ -44,13 +46,15 @@ const StatsComponent = () => {
                                 <dt className="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
                                     User Feedback
                                 </dt>
-                                <dd className="order-1 text-5xl font-extrabold text-gray-700">58%</dd>
+                                <dd className="order-1 text-5xl font-extrabold text-gray-700">{averageRatings.count}</dd>
                             </div>
                             <div className="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-l">
                                 <dt className="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
                                     Review
                                 </dt>
-                                <dd className="order-1 text-5xl font-extrabold text-gray-700">{averageRatings}★</dd>
+                              
+                                <dd className="order-1 text-5xl font-extrabold text-gray-700">{averageRatings.avgRating}★</dd>
+                              
                             </div>
                         </dl>
                     </div>
