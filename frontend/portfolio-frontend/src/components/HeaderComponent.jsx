@@ -1,7 +1,7 @@
 // HeaderComponent.jsx
 import React from 'react'
 import './HeaderComponent.css' // Import your header component styles
-import jhenauemi from '../assets/jhe-naeumi-high-resolution-logo-white-transparent.png'
+import jhenauemi from '../assets/jhe-naeumi.png'
 import { Link } from 'react-scroll'
 
 const HeaderComponent= () => {
@@ -10,8 +10,9 @@ const HeaderComponent= () => {
     <header className="modern-header">
     <div className="container">
         <div className="logo1">
+            <Link to ="home"spy={true} smooth={true} offset={-10} duration={200}>
                 <img src={jhenauemi} alt="Logo" />
-         
+            </Link>
         </div>
         <input type="checkbox" id="menu-toggle" className="menu-toggle" />
         <label htmlFor="menu-toggle" className="menu-icon">&#9776;</label>
