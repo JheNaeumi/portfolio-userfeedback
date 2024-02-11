@@ -18,6 +18,6 @@ public class Stats {
     @Column(name ="view_count")
     private Long viewCount;
     @Column(name ="date")
-    private Date date;
+    private String date;
 
 }
