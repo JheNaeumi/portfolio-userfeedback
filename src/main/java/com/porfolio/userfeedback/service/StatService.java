@@ -9,6 +9,6 @@ public interface StatService {
 
     Stats updateView();
 
-
+    Stats updateDate();
 
 }

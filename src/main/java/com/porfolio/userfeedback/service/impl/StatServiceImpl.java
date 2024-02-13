@@ -4,11 +4,12 @@ import com.porfolio.userfeedback.entity.Stats;
 import com.porfolio.userfeedback.repository.StatRepository;
 import com.porfolio.userfeedback.service.StatService;
 import com.porfolio.userfeedback.util.DateFormat;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-
+@AllArgsConstructor
 @Service
 public class StatServiceImpl implements StatService {
 
@@ -28,6 +29,16 @@ public class StatServiceImpl implements StatService {
 
     @Override
     public Stats updateView() {
-        return null;
+        Stats stats = getStats();
+        stats.setViewCount(stats.getViewCount()+1);
+        return statRepository.save(stats);
+    }
+
+    @Override
+    public Stats updateDate() {
+        String date = DateFormat.MMddyyyy();
+        Stats stats = getStats();
+        stats.setDate(date);
+        return statRepository.save(stats);
     }
 }
