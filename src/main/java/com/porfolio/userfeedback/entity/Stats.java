@@ -13,8 +13,8 @@ import java.util.Date;
 @Table(name="stats")
 public class Stats {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id")
+    private Long id =1L;
     @Column(name ="view_count")
     private Long viewCount;
     @Column(name ="date")
