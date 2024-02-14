@@ -1,6 +1,8 @@
 package com.porfolio.userfeedback.service.impl;
 
+import com.porfolio.userfeedback.dto.StatDto;
 import com.porfolio.userfeedback.entity.Stats;
+import com.porfolio.userfeedback.entity.User;
 import com.porfolio.userfeedback.repository.StatRepository;
 import com.porfolio.userfeedback.service.StatService;
 import com.porfolio.userfeedback.util.DateFormat;
@@ -40,5 +42,21 @@ public class StatServiceImpl implements StatService {
         Stats stats = getStats();
         stats.setDate(date);
         return statRepository.save(stats);
+    }
+
+    @Override
+    public StatDto getAllStat() {
+       Stats statOne = statRepository.getAllofStat();
+       StatDto statDto = new StatDto();
+        if(statOne==null){
+            Stats stats = new Stats(1L,0L, DateFormat.MMddyyyy());
+            statRepository.save(stats);
+            statDto.setViewCount(stats.getViewCount());
+            statDto.setDate(stats.getDate());
+            return statDto;
+        }
+        statDto.setViewCount(statOne.getViewCount());
+        statDto.setDate(statOne.getDate());
+        return statDto;
     }
 }

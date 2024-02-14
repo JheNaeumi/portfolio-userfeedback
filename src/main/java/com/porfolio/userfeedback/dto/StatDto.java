@@ -11,7 +11,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StatDto {
-    private Long id;
     private Long viewCount;
     private String date;
 }

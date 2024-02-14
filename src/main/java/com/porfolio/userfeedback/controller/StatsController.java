@@ -1,8 +1,8 @@
 package com.porfolio.userfeedback.controller;
 
+import com.porfolio.userfeedback.dto.StatDto;
 import com.porfolio.userfeedback.entity.Stats;
 import com.porfolio.userfeedback.service.StatService;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +19,11 @@ public class StatsController {
     public ResponseEntity<HashMap<String, Object>> getAllStats() {
         Stats stats = statsService.getStats();
         return ResponseEntity.ok(createResponse("stats", stats));
+    }
+    @GetMapping(path = "/get/test")
+    public ResponseEntity<StatDto> getAllofStats(){
+        StatDto statDto = statsService.getAllStat();
+        return ResponseEntity.ok(statDto);
     }
 
     @PatchMapping(path = "/update/views")

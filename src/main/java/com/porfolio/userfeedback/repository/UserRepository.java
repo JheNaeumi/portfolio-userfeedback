@@ -13,4 +13,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findAllRatings();
     @Query(value = "SELECT rating FROM user WHERE rating IS NOT NULL", nativeQuery = true)
     List<Long> findAllIntRatings();
+
 }
