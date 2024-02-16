@@ -2,7 +2,7 @@ package com.porfolio.userfeedback.service.impl;
 
 import com.porfolio.userfeedback.dto.StatDto;
 import com.porfolio.userfeedback.entity.Stats;
-import com.porfolio.userfeedback.entity.User;
+import com.porfolio.userfeedback.mapper.StatMapper;
 import com.porfolio.userfeedback.repository.StatRepository;
 import com.porfolio.userfeedback.service.StatService;
 import com.porfolio.userfeedback.util.DateFormat;
@@ -18,45 +18,34 @@ public class StatServiceImpl implements StatService {
     private StatRepository statRepository;
 
 
+    //Updates the Views +1
     @Override
-    public Stats getStats() {
-        Optional<Stats> optional = statRepository.findById(1L);
-        if (!optional.isPresent()) {
-            Stats stats = new Stats(1L,0L, DateFormat.MMddyyyy());
-            statRepository.save(stats);
-            return stats;
-        }
-        return optional.get();
-    }
-
-    @Override
-    public Stats updateView() {
-        Stats stats = getStats();
-        stats.setViewCount(stats.getViewCount()+1);
-        return statRepository.save(stats);
-    }
-
-    @Override
-    public Stats updateDate() {
-        String date = DateFormat.MMddyyyy();
-        Stats stats = getStats();
-        stats.setDate(date);
-        return statRepository.save(stats);
-    }
-
-    @Override
-    public StatDto getAllStat() {
-       Stats statOne = statRepository.getAllofStat();
-       StatDto statDto = new StatDto();
-        if(statOne==null){
-            Stats stats = new Stats(1L,0L, DateFormat.MMddyyyy());
-            statRepository.save(stats);
-            statDto.setViewCount(stats.getViewCount());
-            statDto.setDate(stats.getDate());
-            return statDto;
-        }
-        statDto.setViewCount(statOne.getViewCount());
-        statDto.setDate(statOne.getDate());
+    public StatDto updateView() {
+        StatDto statDto = getStat();
+        Stats stat = statRepository.getAllofStat();
+        stat.setViewCount(stat.getViewCount()+1);
+        statRepository.save(stat);
         return statDto;
+    }
+    //Update the Date with current date
+    @Override
+    public StatDto updateDate() {
+        StatDto statDto = getStat();
+        Stats stat = statRepository.getAllofStat();
+        String date = DateFormat.MMddyyyy();
+        stat.setDate(date);
+        statRepository.save(stat);
+        return statDto;
+    }
+    //Gets All the current Stats & checks if repository is empty
+    @Override
+    public StatDto getStat() {
+       Stats stat = statRepository.getAllofStat();
+       //creates an initial repository if its empty
+        if(stat==null){
+            stat = new Stats(1L,0L, DateFormat.MMddyyyy());
+            statRepository.save(stat);
+        }
+        return StatMapper.MaptoStatDto(stat);
     }
 }

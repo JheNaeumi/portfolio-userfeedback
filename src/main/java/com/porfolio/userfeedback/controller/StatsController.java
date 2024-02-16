@@ -15,34 +15,28 @@ import java.util.HashMap;
 @RequestMapping("/api/stats")
 public class StatsController {
     private StatService statsService;
+
     @GetMapping(path = "/get")
-    public ResponseEntity<HashMap<String, Object>> getAllStats() {
-        Stats stats = statsService.getStats();
-        return ResponseEntity.ok(createResponse("stats", stats));
-    }
-    @GetMapping(path = "/get/test")
     public ResponseEntity<StatDto> getAllofStats(){
-        StatDto statDto = statsService.getAllStat();
+        StatDto statDto = statsService.getStat();
         return ResponseEntity.ok(statDto);
     }
 
     @PatchMapping(path = "/update/views")
-    @CrossOrigin
-    public ResponseEntity<HashMap<String, Object>> updateViews() {
-        Stats stats = statsService.updateView();
-        return ResponseEntity.ok(createResponse("stats", stats));
+    public ResponseEntity<StatDto> updateViews() {
+        StatDto statDto = statsService.updateView();
+        return ResponseEntity.ok(statDto);
     }
 
     @PatchMapping(path = "/update/last_updated")
-    @CrossOrigin
-    public ResponseEntity<HashMap<String, Object>> updateLastUpdated() {
-        Stats stats = statsService.updateDate();
-        return ResponseEntity.ok(createResponse("stats", stats));
+    public ResponseEntity<StatDto> updateLastUpdated() {
+        StatDto statDto = statsService.updateDate();
+        return ResponseEntity.ok(statDto);
     }
 
-    private HashMap<String, Object> createResponse(String key, Object value) {
-        HashMap<String, Object> responseBody = new HashMap<>();
-        responseBody.put(key, value);
-        return responseBody;
-    }
+//    private HashMap<String, Object> createResponse(String key, Object value) {
+//        HashMap<String, Object> responseBody = new HashMap<>();
+//        responseBody.put(key, value);
+//        return responseBody;
+//    }
 }
