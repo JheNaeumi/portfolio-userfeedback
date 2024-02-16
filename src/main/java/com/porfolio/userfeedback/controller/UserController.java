@@ -1,7 +1,7 @@
 package com.porfolio.userfeedback.controller;
 
 import com.porfolio.userfeedback.dto.UserDto;
-import com.porfolio.userfeedback.dto.UserDtoFeedback;
+import com.porfolio.userfeedback.dto.UserDtoRatingCountAverage;
 import com.porfolio.userfeedback.dto.UserDtoRating;
 import com.porfolio.userfeedback.service.UserService;
 import lombok.AllArgsConstructor;
@@ -30,8 +30,8 @@ public class UserController {
         return ResponseEntity.ok(userDtoRating);
     }
     @GetMapping(path = "/rating/avg+count")
-    public ResponseEntity<UserDtoFeedback> calculateRatings() {
-        UserDtoFeedback userDtoFeedback = userService.getAverageAndCountRatings();
+    public ResponseEntity<UserDtoRatingCountAverage> calculateRatings() {
+        UserDtoRatingCountAverage userDtoFeedback = userService.getAverageAndCountRatings();
         return ResponseEntity.ok(userDtoFeedback);
     }
 

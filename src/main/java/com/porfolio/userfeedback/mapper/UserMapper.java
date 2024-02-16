@@ -1,12 +1,9 @@
 package com.porfolio.userfeedback.mapper;
 
 import com.porfolio.userfeedback.dto.UserDto;
-import com.porfolio.userfeedback.dto.UserDtoFeedback;
+import com.porfolio.userfeedback.dto.UserDtoRatingCountAverage;
 import com.porfolio.userfeedback.dto.UserDtoRating;
 import com.porfolio.userfeedback.entity.User;
-import com.porfolio.userfeedback.util.Rating;
-
-import java.util.List;
 
 public class UserMapper {
     public static UserDto mapToUserDto(User user){
@@ -29,16 +26,16 @@ public class UserMapper {
         );
     }
     public static UserDtoRating mapToUserDtoRating(User user) {
-        UserDtoRating userDto = new UserDtoRating();
-        userDto.setRating(user.getRating());
-        userDto.setId(user.getId());
-        return userDto;
+        UserDtoRating userDtoRating = new UserDtoRating();
+        userDtoRating.setRating(user.getRating());
+        userDtoRating.setId(user.getId());
+        return userDtoRating;
     }
-    public static UserDtoFeedback mapToUserDtoFeedback(Long count, Long avg){
-        UserDtoFeedback userDtoFeedback = new UserDtoFeedback();
-        userDtoFeedback.setCount(count);
-        userDtoFeedback.setAvgRating(avg);
-        return  userDtoFeedback;
+    public static UserDtoRatingCountAverage mapToUserDtoCountAverage(Long count, Long avg){
+        UserDtoRatingCountAverage userDtoRatingCountAverage = new UserDtoRatingCountAverage();
+        userDtoRatingCountAverage.setCount(count);
+        userDtoRatingCountAverage.setAvgRating(avg);
+        return userDtoRatingCountAverage;
     }
 
 

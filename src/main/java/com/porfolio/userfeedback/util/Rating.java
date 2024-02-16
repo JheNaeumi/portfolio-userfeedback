@@ -3,8 +3,9 @@ package com.porfolio.userfeedback.util;
 import java.util.List;
 
 public class Rating {
-    private long avr = 0;
+
     public long calculateAverageRating(List<Long> arr) {
+        long avr = 0;
         if (arr == null || arr.isEmpty()) {
             return 0L;
         }
