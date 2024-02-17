@@ -7,6 +7,7 @@ import facebook from '../assets/facebook-logo.png'
 
 const FooterComponent = () => {
   return (
+    
     <footer id="footer">
       
       <div className="social-links">
@@ -23,6 +24,7 @@ const FooterComponent = () => {
       <span>
          All rights reserved
         </span>
+      
     </footer>
   )
 }

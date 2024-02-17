@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './MainPageComponent.css';
 import jprofile from '../assets/jprofile.png'
 
+
 const MainPage = () => {
   const [titles, setTitles] = useState([
     "Hi, I’m Jeremiah Pasion",
@@ -12,8 +13,8 @@ const MainPage = () => {
     // Add more titles as needed
   ]);
 
-  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
 
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
       // Rotate through titles
@@ -22,6 +23,10 @@ const MainPage = () => {
 
     return () => clearInterval(interval);
   }, [titles]);
+
+  const updateView = () =>{
+    updateViewCount()
+  }
 
   return (
     <section id ="home">
@@ -49,6 +54,7 @@ const MainPage = () => {
        </p>
       </div>
     </div>
+    
     </section>
   )
 }
