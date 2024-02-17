@@ -9,6 +9,6 @@ export const updateDate = () => {
     axios.patch(REST_API_BASE_URL + "/update/last_updated")
 }
 export const getStats = () => {
-    axios.get(REST_API_BASE_URL + "/get")
+    return axios.get(REST_API_BASE_URL + "/get")
 }
 
