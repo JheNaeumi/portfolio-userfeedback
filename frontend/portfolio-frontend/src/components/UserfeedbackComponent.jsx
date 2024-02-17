@@ -12,7 +12,6 @@ const UserFeedbackComponent = () => {
   const [comments, setFeedback] = useState('');
   const [rating, setRating] = useState(0);
 
-  const navigator = useNavigate();  
   const toggleFeedbackForm = () => {
     setShowFeedbackForm(!showFeedbackForm);
   };
@@ -23,7 +22,6 @@ const UserFeedbackComponent = () => {
     
     postUserFeedback(user).then((response)=>{
       console.log(response.data);
-      navigator('/users')
     }).catch(console.error())
     console.log('Feedback submitted:', { name, email, comments, rating });
     setShowFeedbackForm(false);

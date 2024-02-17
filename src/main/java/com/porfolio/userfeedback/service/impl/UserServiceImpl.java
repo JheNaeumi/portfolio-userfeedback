@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
     public UserDtoRatingCountAverage getAverageAndCountRatings() {
         List<Long> ratings = userRepository.findAllLongRatings();
         Rating rating = new Rating();
-        return UserMapper.mapToUserDtoCountAverage(rating.calculateAverageRating(ratings), rating.getCountRating(ratings));
+        return UserMapper.mapToUserDtoCountAverage(rating.getCountRating(ratings), rating.calculateAverageRating(ratings));
     }
 
 }
