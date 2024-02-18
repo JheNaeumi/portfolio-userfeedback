@@ -77,4 +77,15 @@
     transform: translateY(120px); /* Adjust the value based on your design */
   }
 
-  
+  .alert {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff6961; /* Adjust the color as needed */
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    animation: popup 0.3s ease-in-out;
+  }

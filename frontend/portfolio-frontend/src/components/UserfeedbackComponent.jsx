@@ -11,6 +11,7 @@ const UserFeedbackComponent = () => {
   const [email, setEmail] = useState('');
   const [comments, setFeedback] = useState('');
   const [rating, setRating] = useState(0);
+  const [showAlert, setShowAlert] = useState(false);
 
   const toggleFeedbackForm = () => {
     setShowFeedbackForm(!showFeedbackForm);
@@ -18,6 +19,14 @@ const UserFeedbackComponent = () => {
 
   const submitFeedback = () => {
     // Handle feedback submission (you can send it to a server, etc.)
+    if (!name || !email || !validateEmail(email) || rating === 0 || !comments) {
+      // Display an error message or handle validation failure appropriately
+      //alert('Please fill out all fields and provide a valid email.');
+      setShowAlert(true);
+      // Hide the alert after a short delay (adjust the duration as needed)
+      setTimeout(() => setShowAlert(false), 3000);
+      return;
+    }
     const user = {name, email, comments ,rating}
     
     postUserFeedback(user).then((response)=>{
@@ -52,6 +61,12 @@ const UserFeedbackComponent = () => {
       );
     }
     return stars;
+  };
+
+  const validateEmail = (email) => {
+    // Basic email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   return (
@@ -90,9 +105,15 @@ const UserFeedbackComponent = () => {
           ></textarea>
 
           <button onClick={submitFeedback}className='button1'>Submit Feedback</button>
+          {showAlert && (
+          <div className="alert">
+            Please fill out all fields and provide a valid email.
+          </div>
+          )}
         </div>
       )}
     </div>
+    
   </div>
   )
 }
