@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { getAvrgCountRatings} from '../service/UserfeedbackService';
-import { getStats } from '../service/statService';
+import { getStats, updateDate, updateViewCount } from '../service/statService';
 
 
 const StatsComponent = () => {
@@ -11,9 +11,11 @@ const StatsComponent = () => {
 
     useEffect(()=>
     {   
+        updateDate();
+        updateViewCount();
         getAverageAndCountRatings();
         getStatsViewAndDate();
-        
+       
     },[])
     function getAverageAndCountRatings (){
         getAvrgCountRatings().then((response)=> {
