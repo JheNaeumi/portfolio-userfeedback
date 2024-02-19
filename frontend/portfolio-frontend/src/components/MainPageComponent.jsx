@@ -41,9 +41,6 @@ const MainPage = () => {
           <h1>{titles[currentTitleIndex]}</h1>
       </div>
       </div>
-    
-
-     
       <div className='about-me'>
         <h1 >About me</h1>
         <p> 
@@ -54,7 +51,6 @@ const MainPage = () => {
        </p>
       </div>
     </div>
-    
     </section>
   )
 }

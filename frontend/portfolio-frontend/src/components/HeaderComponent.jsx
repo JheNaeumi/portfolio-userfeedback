@@ -30,10 +30,7 @@ const HeaderComponent= () => {
                 {/* Add more navigation links as needed */}
             </ul>
         </nav>
- 
-     
     </div>
-
     </header>
  
 

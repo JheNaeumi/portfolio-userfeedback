@@ -63,9 +63,7 @@ const StatsComponent = () => {
                                 <dt className="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
                                     Review
                                 </dt>
-                              
                                 <dd className="order-1 text-5xl font-extrabold text-gray-700">{averageRatings.avgRating}★</dd>
-                              
                             </div>
                             
                         </dl>
