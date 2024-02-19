@@ -2,30 +2,32 @@
 
 #footer {
     position: flex;
+    margin-top: 80px;
     bottom: 0;
     width: 100%;
-    height: 100px; /* Increased height to accommodate social icons */
+    height: 180px; /* Increased height to accommodate social icons */
     background-color: white;
-    text-align: center;
     color: black;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-  }
-  
-  #footer span {
-    font-size: 14px;
-    opacity: 0.8;
+    align-items: center;
+    text-align: center;
   }
   
   .social-links {
     padding-top: 20px;
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  .onlysocial-link{
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     margin-bottom: 10px;
-    display: flex;
+    margin-top: 20px;
+   
   }
-  
   .social-links a {
     margin: 0 10px;
   }
@@ -41,18 +43,46 @@
     transform: scale(1.2);
   }
   
-  .button{
-    border-radius: 12px;
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+#logoo {
+ width: 50%;
+ padding-top: 35px;
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+  #footer{
+    flex-direction: column;
+
+    
+  }
+  .onlysocial-link{
+    justify-content: center;
   }
   
-  .button:hover {
-    background-color: #2980b9;
-  }
+}
