@@ -10,8 +10,7 @@ import springlogo from '../assets/spring-svgrepo-com.svg'
 const FooterComponent = () => {
   return (
     
-    <footer id="footer" >
-      <h1 className='text-gray-900'>Powered By:</h1>
+    <footer id="footer" className='bg-gradient-to-t from-[#DCD6F7] to-white'>
       <div id="logoo" className="flex flex-row">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -35,14 +34,10 @@ const FooterComponent = () => {
           <img src={facebook} alt="Facebook" />
         </a>
         </div>
-        <span className="allrights">
-         All rights reserved
-      </span>   
+        <span>
+        © 2024 All rights reserved
+        </span>   
       </div>
-      
-      
-      
-        
     </footer>
   )
 }
