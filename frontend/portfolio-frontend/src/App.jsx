@@ -20,13 +20,12 @@ function App() {
           <ProjectComponent/>
           <StatsComponent />
           <UserFeedbackComponent />
-          <BackToTopButton/>
         </>}>
       </Route>
       </Routes>
       
       <FooterComponent/>
-      
+      <BackToTopButton/>
     </BrowserRouter>
     </>
   )
