@@ -6,11 +6,11 @@ This personal portfolio website is built with Vite React for the frontend, Sprin
 ## REST API
 
 ### /api/user
-POST : /api/user 
+POST : /api/users 
 
-GET : /api/user/rating
+GET : /api/users/rating
 
-GET : /api/user/rating/avg+count
+GET : /api/users/rating/avg+count
 
 ### /api/stats
 GET : /api/stats/get
@@ -27,7 +27,8 @@ PATCH : /api/stats/update/last_updated
 2. Create Database
 > CREATE DATABASE your_database;
 
-3. Configure Properties
+3. Configure Properties for Database
+rename application.properties.sample to application.properties
 > spring.datasource.url=jdbc:mysql://localhost:3306/userfeedback
 spring.datasource.username=your_username // ex: root
 spring.datasource.password=your_password
@@ -39,7 +40,6 @@ spring.jpa.hibernate.ddl-auto=update
 
 5. Navigate and Run Vite in Development
 > cd frontend/porfolio-frontend
-
 > npm run dev
 
 
