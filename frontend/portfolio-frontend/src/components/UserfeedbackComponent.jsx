@@ -46,21 +46,21 @@ const UserFeedbackComponent = () => {
   };
 
   // Function to render star icons for rating
-  const renderStars = () => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <span
-          key={i}
-          className={`star ${i <= rating ? 'selected' : ''}`}
-          onClick={() => handleRating(i)}
-        >
-          ★
-        </span>
-      );
-    }
-    return stars;
-  };
+  // const renderStars = () => {
+  //   const stars = [];
+  //   for (let i = 1; i <= 5; i++) {
+  //     stars.push(
+  //       <span
+  //         key={i}
+  //         className={`star ${i <= rating ? 'selected' : ''}`}
+  //         onClick={() => handleRating(i)}
+  //       >
+  //         ★
+  //       </span>
+  //     );
+  //   }
+  //   return stars;
+  // };
 
   const validateEmail = (email) => {
     // Basic email validation regex
@@ -121,14 +121,34 @@ const UserFeedbackComponent = () => {
   //   </div>
   // </div>
   <>
-    <div class="max-w-md py-3 px-3 sm:mx-auto">
+    <div class="max-w-md py-1 px-3 sm:mx-auto">
       <div class="flex flex-col rounded-xl bg-slate-200 shadow-lg">
         <div class="px-12 py-5">
-          <h2 class="whitespace-nowrap text-center font-semibold text-gray-800 sm:text-xl">Your opinion matters to us!</h2>
+          <h2 class=" text-center font-semibold text-gray-800 sm:text-xl">Your opinion matters to us!</h2>
         </div>
         <div class="flex w-full flex-col items-center bg-[#fdfeff]">
-          <div class="flex flex-col items-center space-y-3 py-6">
-            <span class="text-lg font-medium text-gray-500">How was your experience?</span>
+          <div class="flex flex-col items-center space-y-3 py-1">
+            <div class="flex w-3/4 flex-col">
+              <div className='items-center'>
+                <label htmlFor="name" className='text-gray-700 font-medium py-1'>Name:</label>
+                <input className='resize-none rounded-xl bg-gray-100 p-4 text-gray-500 outline-none focus:ring'
+                  type="text"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Your Name"
+                />
+                <label htmlFor="email" className='text-gray-700 font-medium py-1'>Email:</label>
+                <input className='resize-none rounded-xl bg-gray-100 p-4 text-gray-500 outline-none focus:ring'
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your Email"
+                />
+              </div>
+            </div>
+            <span class="text-lg font-medium text-gray-700">How was your experience?</span>
               <div className="flex space-x-3">
                 {[1, 2, 3, 4, 5].map((value) => (
                   <svg
@@ -146,13 +166,16 @@ const UserFeedbackComponent = () => {
         ))}
               </div>
           </div>
-          <div class="flex w-3/4 flex-col">
-            <textarea rows="3" class="resize-none rounded-xl bg-gray-100 p-4 text-gray-500 outline-none focus:ring" placeholder="Leave a message, if you want"></textarea>
-            <button class="my-8 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 py-3 text-base text-white">Submit</button>
+          <div class="flex w-3/4 flex-col pt-3">
+            <textarea rows="3" class="resize-none rounded-xl bg-gray-100 p-4 text-gray-500 outline-none focus:ring" value={comments}
+             onChange={(e) => setFeedback(e.target.value)} placeholder="Leave a message, if you want"></textarea>
+            <button class="my-8 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 py-3 text-base text-white" onClick={submitFeedback}>Submit</button>
+            {showAlert && (
+              <div className="alert">
+                Please fill out all fields and provide a valid email.
+              </div>
+            )}
           </div>
-        </div>
-        <div class="flex items-center justify-center py-5">
-          <a href="#" class="text-sm text-gray-600">Maybe later</a>
         </div>
       </div>
     </div>
