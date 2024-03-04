@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useLayoutEffect} from 'react';
 import { getAvrgCountRatings} from '../service/UserfeedbackService';
-import { getStats, updateDate, updateViewCount } from '../service/statService';
+import { getStats, updateDate, updateViewCount } from '../service/StatService';
 
 
 const StatsComponent = () => {
