@@ -1,7 +1,7 @@
-// src/components/UserFeedbackComponent.jsx
+
 
 import React, { useState } from 'react';
-import './UserFeedbackComponent.css';
+import './UserfeedbackComponent.css';
 import { postUserFeedback} from '../service/UserfeedbackService';
 
 
