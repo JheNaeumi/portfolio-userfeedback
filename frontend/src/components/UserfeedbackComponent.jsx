@@ -121,7 +121,7 @@ const UserFeedbackComponent = () => {
   //   </div>
   // </div>
   <>
-    <div class="max-w-md py-1 px-3 sm:mx-auto">
+    <div class="max-w-md py-1 px-3 sm:mx-auto" id="feedback">
       <div class="flex flex-col rounded-xl bg-slate-200 shadow-lg">
         <div class="px-12 py-5">
           <h2 class=" text-center font-semibold text-gray-800 sm:text-xl">Your opinion matters to us!</h2>
