@@ -29,6 +29,24 @@ import React from 'react'
           frameworks: 'Spring Boot, Vite & TailwindCSS'
           }
       },
+      {
+        id: 4,
+        title: 'Blogpost OnlyFriends',
+        description:'Explore further enhancements and functionalities in Spring Boot, including implementations like Spring Security, JWT, Starter Mail, Rate limiting, and more.',
+        technology: {
+          language: 'Java, SQL, JavaScript, HTML & CSS',
+          frameworks: 'Spring Boot, Vite & TailwindCSS'
+          }
+      },
+      {
+        id: 5,
+        title: 'Simple CRUD .NET',
+        description:'I created and learned a new stack using .NET for an exam application, as web applications are similarly structured',
+        technology: {
+          language: 'C#, SQL, JavaScript, HTML & CSS',
+          frameworks: '.Net, Vite & TailwindCSS'
+          }
+      },
       // More posts...
     ]
     return ( 
