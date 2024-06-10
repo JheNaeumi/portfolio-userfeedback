@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import './UserfeedbackComponent.css';
 import { postUserFeedback} from '../service/UserfeedbackService';
@@ -45,23 +44,7 @@ const UserFeedbackComponent = () => {
     setRating(selectedRating);
   };
 
-  // Function to render star icons for rating
-  // const renderStars = () => {
-  //   const stars = [];
-  //   for (let i = 1; i <= 5; i++) {
-  //     stars.push(
-  //       <span
-  //         key={i}
-  //         className={`star ${i <= rating ? 'selected' : ''}`}
-  //         onClick={() => handleRating(i)}
-  //       >
-  //         ★
-  //       </span>
-  //     );
-  //   }
-  //   return stars;
-  // };
-
+ 
   const validateEmail = (email) => {
     // Basic email validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -76,59 +59,15 @@ const UserFeedbackComponent = () => {
       // You can add your logic here to handle the rating, such as sending it to a server or updating the UI.
     }
   return (
-  // <div id="container-feedback">
-  //   <div className={`user-feedback ${showFeedbackForm ? 'active': ''}`} id = "feedback">
-  //     <button onClick={toggleFeedbackForm}className="button1">Give Feedback</button>
-  //     {showFeedbackForm && (
-  //       <div className="feedback-form" id ="space">
-  //         <label htmlFor="name">Name:</label>
-  //         <input
-  //           type="text"
-  //           id="name"
-  //           value={name}
-  //           onChange={(e) => setName(e.target.value)}
-  //           placeholder="Your Name"
-  //         />
-
-  //         <label htmlFor="email">Email:</label>
-  //         <input
-  //           type="email"
-  //           id="email"
-  //           value={email}
-  //           onChange={(e) => setEmail(e.target.value)}
-  //           placeholder="Your Email"
-  //         />
-
-  //         <label htmlFor="rating">Rating:</label>
-  //         <div className="rating-stars">{renderStars()}</div>
-
-  //         <label htmlFor="feedback">Feedback:</label>
-  //         <textarea
-  //           id="feedback"
-  //           value={comments}
-  //           onChange={(e) => setFeedback(e.target.value)}
-  //           placeholder="Type your feedback here"
-  //         ></textarea>
-
-  //         <button onClick={submitFeedback}className='button1'>Submit Feedback</button>
-  //         {showAlert && (
-  //         <div className="alert">
-  //           Please fill out all fields and provide a valid email.
-  //         </div>
-  //         )}
-  //       </div>
-  //     )}
-  //   </div>
-  // </div>
   <>
-    <div class="max-w-md py-1 px-3 sm:mx-auto" id="feedback">
-      <div class="flex flex-col rounded-xl bg-slate-200 shadow-lg">
-        <div class="px-12 py-5">
-          <h2 class=" text-center font-semibold text-gray-800 sm:text-xl">Your opinion matters to us!</h2>
+    <div className="max-w-md py-1 px-3 sm:mx-auto" id="feedback">
+      <div className="flex flex-col rounded-xl bg-slate-200 shadow-lg">
+        <div className="px-12 py-5">
+          <h2 className=" text-center font-semibold text-gray-800 sm:text-xl">Your opinion matters to us!</h2>
         </div>
-        <div class="flex w-full flex-col items-center bg-[#fdfeff]">
-          <div class="flex flex-col items-center space-y-3 py-1">
-            <div class="flex w-3/4 flex-col">
+        <div className="flex w-full flex-col items-center bg-[#fdfeff]">
+          <div className="flex flex-col items-center space-y-3 py-1">
+            <div className="flex w-3/4 flex-col">
               <div className='items-center'>
                 <label htmlFor="name" className='text-gray-700 font-medium py-1'>Name:</label>
                 <input className='resize-none rounded-xl bg-gray-100 p-4 text-gray-500 outline-none focus:ring'
@@ -148,7 +87,7 @@ const UserFeedbackComponent = () => {
                 />
               </div>
             </div>
-            <span class="text-lg font-medium text-gray-700">How was your experience?</span>
+            <span className="text-lg font-medium text-gray-700">How was your experience?</span>
               <div className="flex space-x-3">
                 {[1, 2, 3, 4, 5].map((value) => (
                   <svg
@@ -166,10 +105,10 @@ const UserFeedbackComponent = () => {
         ))}
               </div>
           </div>
-          <div class="flex w-3/4 flex-col pt-3">
-            <textarea rows="3" class="resize-none rounded-xl bg-gray-100 p-4 text-gray-500 outline-none focus:ring" value={comments}
+          <div className="flex w-3/4 flex-col pt-3">
+            <textarea rows="3" className="resize-none rounded-xl bg-gray-100 p-4 text-gray-500 outline-none focus:ring" value={comments}
              onChange={(e) => setFeedback(e.target.value)} placeholder="Leave a message, if you want"></textarea>
-            <button class="my-8 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 py-3 text-base text-white" onClick={submitFeedback}>Submit</button>
+            <button className="my-8 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 py-3 text-base text-white" onClick={submitFeedback}>Submit</button>
             {showAlert && (
               <div className="alert">
                 Please fill out all fields and provide a valid email.

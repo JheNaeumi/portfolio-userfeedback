@@ -12,5 +12,5 @@ import lombok.Setter;
 public class UserDtoRatingCountAverage {
     private Long count;
     private Long avgRating;
-    //needs improvement not sure if this should be in the backend
+
 }

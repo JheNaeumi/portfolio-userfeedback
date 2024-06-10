@@ -1,6 +1,6 @@
 import axios from "axios";
-
-const REST_API_BASE_URL ='http://localhost:8080/api/users';
+const HOST_URL = import.meta.env.VITE_PRODUCTION_URL
+const REST_API_BASE_URL = HOST_URL+'/api/users'; //configure as needed
 
 export const listAllRatings = () => {
     return axios.get(REST_API_BASE_URL + "/rating");
