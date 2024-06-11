@@ -9,9 +9,9 @@ import java.util.List;
 
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    @Query(value = "SELECT * FROM user WHERE rating IS NOT NULL", nativeQuery = true)
+    @Query(value = "SELECT * FROM users WHERE rating IS NOT NULL", nativeQuery = true)
     List<User> findAllUserRatings();
-    @Query(value = "SELECT rating FROM user WHERE rating IS NOT NULL", nativeQuery = true)
+    @Query(value = "SELECT rating FROM users WHERE rating IS NOT NULL", nativeQuery = true)
     List<Long> findAllLongRatings();
 
 }
