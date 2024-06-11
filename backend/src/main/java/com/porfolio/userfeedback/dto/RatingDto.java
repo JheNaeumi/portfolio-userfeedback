@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDtoRating {
+public class RatingDto {
     private Long id;
     private Long rating;
 }
