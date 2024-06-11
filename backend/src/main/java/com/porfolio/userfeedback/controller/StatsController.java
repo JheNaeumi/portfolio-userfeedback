@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
-@CrossOrigin("*")
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/stats")
@@ -34,9 +34,4 @@ public class StatsController {
         return ResponseEntity.ok(statDto);
     }
 
-//    private HashMap<String, Object> createResponse(String key, Object value) {
-//        HashMap<String, Object> responseBody = new HashMap<>();
-//        responseBody.put(key, value);
-//        return responseBody;
-//    }
 }

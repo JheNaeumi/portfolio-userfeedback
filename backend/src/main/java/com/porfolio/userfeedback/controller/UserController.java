@@ -1,8 +1,8 @@
 package com.porfolio.userfeedback.controller;
 
 import com.porfolio.userfeedback.dto.UserDto;
-import com.porfolio.userfeedback.dto.UserDtoRatingCountAverage;
-import com.porfolio.userfeedback.dto.UserDtoRating;
+import com.porfolio.userfeedback.dto.AvgRatingDto;
+import com.porfolio.userfeedback.dto.RatingDto;
 import com.porfolio.userfeedback.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*")
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/users")
@@ -25,13 +25,13 @@ public class UserController {
     }
 
     @GetMapping(path = "/rating")
-    public ResponseEntity<List<UserDtoRating>>getAllRatings(){
-        List<UserDtoRating> userDtoRating =userService.getAllRatings();
-        return ResponseEntity.ok(userDtoRating);
+    public ResponseEntity<List<RatingDto>>getAllRatings(){
+        List<RatingDto> ratingDto =userService.getAllRatings();
+        return ResponseEntity.ok(ratingDto);
     }
     @GetMapping(path = "/rating/avg+count")
-    public ResponseEntity<UserDtoRatingCountAverage> calculateRatings() {
-        UserDtoRatingCountAverage userDtoFeedback = userService.getAverageAndCountRatings();
+    public ResponseEntity<AvgRatingDto> calculateRatings() {
+        AvgRatingDto userDtoFeedback = userService.getAverageAndCountRatings();
         return ResponseEntity.ok(userDtoFeedback);
     }
 
