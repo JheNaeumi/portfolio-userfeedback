@@ -1,6 +1,6 @@
 package com.porfolio.userfeedback.service.impl;
 
-import com.porfolio.userfeedback.dto.UserDtoRatingCountAverage;
+import com.porfolio.userfeedback.dto.AvgRatingDto;
 import com.porfolio.userfeedback.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -31,7 +31,7 @@ class UserServiceImplTest {
         when(userRepository.findAllLongRatings()).thenReturn(mockRatings);
 
         // Act
-        UserDtoRatingCountAverage result = userService.getAverageAndCountRatings();
+        AvgRatingDto result = userService.getAverageAndCountRatings();
 
         // Assert
         assertEquals(4L, result.getAvgRating()); // Replace with your expected average
@@ -44,7 +44,7 @@ class UserServiceImplTest {
         when(userRepository.findAllLongRatings()).thenReturn(Collections.emptyList());
 
         // Act
-        UserDtoRatingCountAverage result = userService.getAverageAndCountRatings();
+        AvgRatingDto result = userService.getAverageAndCountRatings();
 
         // Assert
         assertEquals(0L, result.getAvgRating());
@@ -57,7 +57,7 @@ class UserServiceImplTest {
         when(userRepository.findAllLongRatings()).thenReturn(null);
 
         // Act
-        UserDtoRatingCountAverage result = userService.getAverageAndCountRatings();
+        AvgRatingDto result = userService.getAverageAndCountRatings();
 
         // Assert
         assertEquals(0L, result.getAvgRating());
