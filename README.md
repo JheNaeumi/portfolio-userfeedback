@@ -1,7 +1,7 @@
 # Jhe Naeumi - Personal Web Portfolio
 ## About
 
-This personal portfolio website is built with Vite React for the frontend, Spring Boot for the backend, and MySQL for the database. It operates as a straightforward full-stack platform, leveraging REST API to collect user feedback and statistics, which are subsequently presented on the site. The project is presently in development, with the frontend deployed as a static website on render.com for viewing. You can access it through the following link: https://portfolio-userfeedback.onrender.com. Ongoing improvements are being implemented for both the backend and design.
+This personal portfolio website is built with Vite React for the frontend, Spring Boot for the backend, and MySQL/PostgresSQL for the database. It operates as a straightforward full-stack platform, leveraging REST API to collect user feedback and statistics, which are subsequently presented on the site. The project is presently in development, with the frontend deployed as a static website on render.com for viewing. You can access it through the following link: https://jhenaeumi.online. Ongoing improvements are being implemented for both the backend and design.
 
 ## REST API
 
